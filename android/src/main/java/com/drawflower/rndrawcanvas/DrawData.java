@@ -207,6 +207,7 @@ public class DrawData {
             mPaint.setStrokeCap(Paint.Cap.ROUND);
             mPaint.setStrokeJoin(Paint.Join.ROUND);
             mPaint.setAntiAlias(false);
+            mPaint.setAlpha(isErase ? 255 : 85);
             mPaint.setXfermode(new PorterDuffXfermode(isErase ? PorterDuff.Mode.CLEAR : PorterDuff.Mode.SRC_OVER));
         }
         return mPaint;
