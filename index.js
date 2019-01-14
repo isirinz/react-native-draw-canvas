@@ -7,10 +7,10 @@ import ReactNative, {
   FlatList,
   ViewPropTypes,
 } from 'react-native'
-import SketchCanvas from './src/SketchCanvas'
+import DrawCanvas from './src/DrawCanvas'
 import { requestPermissions } from './src/handlePermissions';
 
-export default class RNSketchCanvas extends React.Component {
+export default class RNDrawCanvas extends React.Component {
   static propTypes = {
     containerStyle: ViewPropTypes.style,
     canvasStyle: ViewPropTypes.style,
@@ -135,28 +135,28 @@ export default class RNSketchCanvas extends React.Component {
   }
 
   clear() {
-    this._sketchCanvas.clear()
+    this._drawCanvas.clear()
   }
 
   undo() {
-    return this._sketchCanvas.undo()
+    return this._drawCanvas.undo()
   }
 
   addPath(data) {
-    this._sketchCanvas.addPath(data)
+    this._drawCanvas.addPath(data)
   }
 
   deletePath(id) {
-    this._sketchCanvas.deletePath(id)
+    this._drawCanvas.deletePath(id)
   }
 
   save() {
     if (this.props.savePreference) {
       const p = this.props.savePreference()
-      this._sketchCanvas.save(p.imageType, p.transparent, p.folder ? p.folder : '', p.filename, p.includeImage !== false, p.includeText !== false, p.cropToImageSize || false)
+      this._drawCanvas.save(p.imageType, p.transparent, p.folder ? p.folder : '', p.filename, p.includeImage !== false, p.includeText !== false, p.cropToImageSize || false)
     } else {
       const date = new Date()
-      this._sketchCanvas.save('png', false, '', 
+      this._drawCanvas.save('png', false, '',
         date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + ('0' + date.getDate()).slice(-2) + ' ' + ('0' + date.getHours()).slice(-2) + '-' + ('0' + date.getMinutes()).slice(-2) + '-' + ('0' + date.getSeconds()).slice(-2),
         true, true, false)
     }
@@ -244,8 +244,8 @@ export default class RNSketchCanvas extends React.Component {
             }
           </View>
         </View>
-        <SketchCanvas
-          ref={ref => this._sketchCanvas = ref}
+        <DrawCanvas
+          ref={ref => this._drawCanvas = ref}
           style={this.props.canvasStyle}
           strokeColor={this.state.color + (this.state.color.length === 9 ? '' : this.state.alpha)}
           onStrokeStart={this.props.onStrokeStart}
@@ -275,11 +275,11 @@ export default class RNSketchCanvas extends React.Component {
   }
 };
 
-RNSketchCanvas.MAIN_BUNDLE = SketchCanvas.MAIN_BUNDLE;
-RNSketchCanvas.DOCUMENT = SketchCanvas.DOCUMENT;
-RNSketchCanvas.LIBRARY = SketchCanvas.LIBRARY;
-RNSketchCanvas.CACHES = SketchCanvas.CACHES;
+RNDrawCanvas.MAIN_BUNDLE = DrawCanvas.MAIN_BUNDLE;
+RNDrawCanvas.DOCUMENT = DrawCanvas.DOCUMENT;
+RNDrawCanvas.LIBRARY = DrawCanvas.LIBRARY;
+RNDrawCanvas.CACHES = DrawCanvas.CACHES;
 
 export {
-  SketchCanvas
+  DrawCanvas
 }

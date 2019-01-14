@@ -1,4 +1,4 @@
-react-native-sketch-canvas
+react-native-draw-canvas
 ===================
 
 A React Native component for drawing by touching on both iOS and Android.
@@ -26,11 +26,11 @@ Features
 -------------
 Install from `npm` (only support RN >= 0.40)
 ```bash
-npm install @terrylinla/react-native-sketch-canvas --save
+npm install @isirinz/react-native-draw-canvas --save
 ```
 Link native code
 ```bash
-react-native link @terrylinla/react-native-sketch-canvas
+react-native link @isirinz/react-native-draw-canvas
 ```
 
 ## Usage
@@ -46,14 +46,14 @@ import {
   View,
 } from 'react-native';
 
-import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas';
+import { DrawCanvas } from '@isirinz/react-native-draw-canvas';
 
 export default class example extends Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <SketchCanvas
+          <DrawCanvas
             style={{ flex: 1 }}
             strokeColor={'red'}
             strokeWidth={7}
@@ -125,14 +125,14 @@ import {
   Alert,
 } from 'react-native';
 
-import RNSketchCanvas from '@terrylinla/react-native-sketch-canvas';
+import RNDrawCanvas from '@isirinz/react-native-draw-canvas';
 
 export default class example extends Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <RNSketchCanvas
+          <RNDrawCanvas
             containerStyle={{ backgroundColor: 'transparent', flex: 1 }}
             canvasStyle={{ backgroundColor: 'transparent', flex: 1 }}
             defaultStrokeIndex={0}
@@ -160,7 +160,7 @@ export default class example extends Component {
             saveComponent={<View style={styles.functionButton}><Text style={{color: 'white'}}>Save</Text></View>}
             savePreference={() => {
               return {
-                folder: 'RNSketchCanvas',
+                folder: 'RNDrawCanvas',
                 filename: String(Math.ceil(Math.random() * 100000000)),
                 transparent: false,
                 imageType: 'png'
@@ -258,7 +258,7 @@ Note: Because native module cannot read the file in JS bundle, file path cannot 
   * iOS:
     1. Open Xcode and add images to project by right clicking `Add Files to [YOUR PROJECT NAME]`.
     2. Set `filename` to the name of image files with file extension. 
-    3. Set `directory` to MAIN_BUNDLE (e.g. RNSketchCanvas.MAIN_BUNDLE or SketchCanvas.MAIN_BUNDLE)
+    3. Set `directory` to MAIN_BUNDLE (e.g. RNDrawCanvas.MAIN_BUNDLE or DrawCanvas.MAIN_BUNDLE)
 * Load image from camera
   1. Retrive photo complete path (including file extension) after snapping.
   2. Set `filename` to that path.
@@ -277,7 +277,7 @@ Note: Because native module cannot read the file in JS bundle, file path cannot 
 ### SavePreference object
 ```javascript
 {
-  folder: 'RNSketchCanvas',
+  folder: 'RNDrawCanvas',
   filename: 'image',
   transparent: true,
   imageType: 'jpg',
@@ -321,7 +321,7 @@ Note: Because native module cannot read the file in JS bundle, file path cannot 
 ```javascript
 {
   filename: 'image.png',  // e.g. 'image.png' or '/storage/sdcard0/Pictures/image.png'
-  directory: '', // e.g. SketchCanvas.MAIN_BUNDLE or '/storage/sdcard0/Pictures/'
+  directory: '', // e.g. DrawCanvas.MAIN_BUNDLE or '/storage/sdcard0/Pictures/'
   mode: 'AspectFill'
 }
 ```
@@ -374,6 +374,3 @@ The source code includes 3 examples, using build-in UI components, using with on
 
 Check full example app in the [example](./example) folder 
 
-## Troubleshooting
--------------
-Please refer  [here](https://github.com/terrylinla/react-native-sketch-canvas/wiki/Troubleshooting).

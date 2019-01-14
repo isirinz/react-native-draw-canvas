@@ -1,15 +1,16 @@
 {
-  "name": "@terrylinla/react-native-sketch-canvas",
+  "name": "@isirinz/react-native-draw-canvas",
   "repository": {
     "type": "git",
-    "url": "https://github.com/terrylinla/react-native-sketch-canvas"
+    "url": "git+https://github.com/isirinz/react-native-draw-canvas.git"
   },
-  "version": "0.8.0",
-  "description": "react-native-sketch-canvas allows you to draw / sketch on both iOS and Android devices and sync the drawing data between users. Of course you can save as image.",
-  "author": "Terry Lin",
+  "version": "0.1.0",
+  "description": "react-native-draw-canvas allows you to draw / sketch on both iOS and Android devices and sync the drawing data between users. Of course you can save as image.",
+  "author": "isirinz",
   "main": "index.js",
   "keywords": [
     "react-native",
+    "react-native-draw",
     "react-native-sketch",
     "react-native-svg",
     "react",
@@ -19,5 +20,12 @@
     "draw"
   ],
   "nativePackage": true,
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isirinz/react-native-draw-canvas/issues"
+  },
+  "homepage": "https://github.com/isirinz/react-native-draw-canvas#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

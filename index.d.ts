@@ -60,7 +60,7 @@ export interface LocalSourceImage {
   mode?: 'AspectFill' | 'AspectFit' | 'ScaleToFill'
 }
 
-export interface SketchCanvasProps {
+export interface DrawCanvasProps {
   style?: StyleProp<ViewStyle>
   strokeColor?: string
   strokeWidth?: number
@@ -87,7 +87,7 @@ export interface SketchCanvasProps {
   onPathsChange?: (pathsCount: number) => void
 }
 
-export class SketchCanvas extends React.Component<SketchCanvasProps & ViewProperties> {
+export class DrawCanvas extends React.Component<DrawCanvasProps & ViewProperties> {
   clear(): void
   undo(): number
   addPath(data: Path): void
@@ -116,7 +116,7 @@ export class SketchCanvas extends React.Component<SketchCanvasProps & ViewProper
   static CACHES: string
 }
 
-export interface RNSketchCanvasProps {
+export interface RNDrawCanvasProps {
   containerStyle?: StyleProp<ViewStyle>
   canvasStyle?: StyleProp<ViewStyle>
   onStrokeStart?: () => void
@@ -164,7 +164,7 @@ export interface RNSketchCanvasProps {
   localSourceImage?: LocalSourceImage
 }
 
-export default class RNSketchCanvas extends React.Component<RNSketchCanvasProps & ViewProperties> {
+export default class RNDrawCanvas extends React.Component<RNDrawCanvasProps & ViewProperties> {
   clear(): void
   undo(): number
   addPath(data: Path): void
