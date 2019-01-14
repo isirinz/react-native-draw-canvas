@@ -59,7 +59,7 @@ public class DrawData {
 
     private float number() {
         int min = 1;
-        int max = this.strokeWidth / 2;
+        int max = (int)this.strokeWidth / 2;
         Random random = new Random();
         return random.nextInt((max + 1) - min) + min;
     }
@@ -85,52 +85,52 @@ public class DrawData {
             if (pointsCount >= 3) {
                 PointF a1 = this.points1.get(pointsCount - 2);
                 mPath1.moveTo(a1.x, a1.y);
-                mPath1.lintTo(p1.x, p1.y);
+                mPath1.lineTo(p1.x, p1.y);
                 PointF a2 = this.points2.get(pointsCount - 2);
                 mPath2.moveTo(a2.x, a2.y);
-                mPath2.lintTo(p2.x, p2.y);
+                mPath2.lineTo(p2.x, p2.y);
 
                 PointF a = this.points.get(pointsCount - 2);
                 mPath.moveTo(a.x, a.y);
-                mPath.lintTo(p.x, p.y);
+                mPath.lineTo(p.x, p.y);
 
                 PointF a3 = this.points3.get(pointsCount - 2);
                 mPath3.moveTo(a3.x, a3.y);
-                mPath3.lintTo(p3.x, p3.y);
+                mPath3.lineTo(p3.x, p3.y);
                 PointF a4 = this.points4.get(pointsCount - 2);
                 mPath4.moveTo(a4.x, a4.y);
-                mPath4.lintTo(p4.x, p4.y);
+                mPath4.lineTo(p4.x, p4.y);
             } else if (pointsCount >= 2) {
                 PointF a1 = this.points1.get(0);
                 mPath1.moveTo(a1.x, a1.y);
-                mPath1.lintTo(p1.x, p1.y);
+                mPath1.lineTo(p1.x, p1.y);
                 PointF a2 = this.points2.get(0);
                 mPath2.moveTo(a2.x, a2.y);
-                mPath2.lintTo(p2.x, p2.y);
+                mPath2.lineTo(p2.x, p2.y);
 
                 PointF a = this.points.get(0);
                 mPath.moveTo(a.x, a.y);
-                mPath.lintTo(p.x, p.y);
+                mPath.lineTo(p.x, p.y);
 
                 PointF a3 = this.points3.get(0);
                 mPath3.moveTo(a3.x, a3.y);
-                mPath3.lintTo(p3.x, p3.y);
+                mPath3.lineTo(p3.x, p3.y);
                 PointF a4 = this.points4.get(0);
                 mPath4.moveTo(a4.x, a4.y);
-                mPath4.lintTo(p4.x, p4.y);
+                mPath4.lineTo(p4.x, p4.y);
             } else {
                 mPath1.moveTo(p1.x, p1.y);
-                mPath1.lintTo(p1.x, p1.y);
+                mPath1.lineTo(p1.x, p1.y);
                 mPath2.moveTo(p2.x, p2.y);
-                mPath2.lintTo(p2.x, p2.y);
+                mPath2.lineTo(p2.x, p2.y);
 
                 mPath.moveTo(p.x, p.y);
-                mPath.lintTo(p.x, p.y);
+                mPath.lineTo(p.x, p.y);
 
                 mPath3.moveTo(p3.x, p3.y);
-                mPath3.lintTo(p3.x, p3.y);
+                mPath3.lineTo(p3.x, p3.y);
                 mPath4.moveTo(p4.x, p4.y);
-                mPath4.lintTo(p4.x, p4.y);
+                mPath4.lineTo(p4.x, p4.y);
             }
 
             float x = p.x, y = p.y;
