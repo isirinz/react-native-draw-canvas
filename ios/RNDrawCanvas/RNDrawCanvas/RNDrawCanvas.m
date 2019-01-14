@@ -61,14 +61,6 @@
         _translucentFrozenImage = CGBitmapContextCreateImage(_translucentDrawingContext);
     }
 
-    if (_backgroundImage) {
-        if (!_backgroundImageScaled) {
-            _backgroundImageScaled = [self scaleImage:_backgroundImage toSize:bounds.size contentMode: _backgroundImageContentMode];
-        }
-
-        [_backgroundImageScaled drawInRect:bounds];
-    }
-
     for (CanvasText *text in _arrSketchOnText) {
         [text.text drawInRect: text.drawRect withAttributes: text.attribute];
     }
@@ -80,7 +72,15 @@
     if (_translucentFrozenImage && _currentPath.isTranslucent) {
         CGContextDrawImage(context, bounds, _translucentFrozenImage);
     }
-    
+
+    if (_backgroundImage) {
+        if (!_backgroundImageScaled) {
+            _backgroundImageScaled = [self scaleImage:_backgroundImage toSize:bounds.size contentMode: _backgroundImageContentMode];
+        }
+        
+        [_backgroundImageScaled drawInRect:bounds];
+    }
+
     for (CanvasText *text in _arrTextOnSketch) {
         [text.text drawInRect: text.drawRect withAttributes: text.attribute];
     }

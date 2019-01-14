@@ -344,14 +344,6 @@ public class DrawCanvas extends View {
             mNeedsFullRedraw = false;
         }
 
-        if (mBackgroundImage != null) {
-            Rect dstRect = new Rect();
-            canvas.getClipBounds(dstRect);
-            canvas.drawBitmap(mBackgroundImage, null, 
-                Utility.fillImage(mBackgroundImage.getWidth(), mBackgroundImage.getHeight(), dstRect.width(), dstRect.height(), mContentMode), 
-                null);
-        }
-
         for(CanvasText text: mArrSketchOnText) {
             canvas.drawText(text.text, text.drawPosition.x + text.lineOffset.x, text.drawPosition.y + text.lineOffset.y, text.paint);
         }
@@ -362,6 +354,14 @@ public class DrawCanvas extends View {
 
         if (mTranslucentDrawingBitmap != null && mCurrentPath != null && mCurrentPath.isTranslucent) {
             canvas.drawBitmap(mTranslucentDrawingBitmap, 0, 0, mPaint);
+        }
+
+        if (mBackgroundImage != null) {
+            Rect dstRect = new Rect();
+            canvas.getClipBounds(dstRect);
+            canvas.drawBitmap(mBackgroundImage, null,
+                Utility.fillImage(mBackgroundImage.getWidth(), mBackgroundImage.getHeight(), dstRect.width(), dstRect.height(), mContentMode),
+                null);
         }
 
         for(CanvasText text: mArrTextOnSketch) {

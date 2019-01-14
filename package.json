@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/isirinz/react-native-draw-canvas.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react-native-draw-canvas allows you to draw / sketch on both iOS and Android devices and sync the drawing data between users. Of course you can save as image.",
   "author": "isirinz",
   "main": "index.js",
